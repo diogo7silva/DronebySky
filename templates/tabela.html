@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<p><br></p>
+<h2>Isto é a Tabela!!!</h2>
+<p><br></p>
+<table border="20" align="center">
+    {% for li in range(0, max) %}
+    <tr>
+        {% for co in range(0, 3) %}
+        <td align="left">
+            {{ tabela[li][co] }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

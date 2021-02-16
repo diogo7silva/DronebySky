@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="static/favicon.png" rel="shortcut icon">
+    <link href="static/style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+<ul>
+    <li><a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+    <li><a href="tabela"><i class="fa fa-fw fa-search"></i> Search</a></li>
+    <li><a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+    <li class="dropdown">
+        <a class="dropbtn" href="javascript:void(0)"><i class="fas fa-layer-group"></i> Artigos</a>
+        <div class="dropdown-content">
+            <a href="consultarA"><i class="fas fa-layer-group"></i> Consultar Tabela</a>
+            <a href="inserirA"><i class="fas fa-folder-plus"></i> Inserir Artigo</a>
+            <a href="alterarA"><i class="fas fa-recycle"></i> Alterar Preço</a>
+            <a href="eliminarA"><i class="fas fa-folder-minus"></i> Eliminar Artigo</a>
+        </div>
+    </li>
+    <li class="dropdown">
+        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> Utilizador</a>
+        <div class="dropdown-content">
+            <a href="login"><i class="fa fa-fw fa-lock"></i> Iniciar Sessão</a>
+            <a href="registo"><i class="fa fa-fw fa-user"></i> Registo</a>
+            <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Alterar Passe</a>
+            <a href="apagar"><i class="fas fa-user-minus"></i> Eliminar Conta</a>
+        </div>
+    </li>
+</ul>
+
+{% block body %}
+{% endblock %}
+
+<h3>&copy; 2019 Paulo Côto</h3>
+
+</body>
+</html>
