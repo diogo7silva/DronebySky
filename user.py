@@ -21,11 +21,15 @@ class User:
         return psycopg2.connect(host=mydb.Host, database=mydb.Database, user=mydb.User, password=mydb.Password, sslmode='require')
 
     def apagarusr(self):
-        ficheiro = self.herokudb()
-        db = ficheiro.cursor()
-        db.execute("drop table usr")
-        ficheiro.commit()
-        ficheiro.close()
+        try:
+            ficheiro = self.herokudb()
+            db = ficheiro.cursor()
+            db.execute("drop table usr")
+            ficheiro.commit()
+            ficheiro.close()
+        except:
+            erro = "A tabela não existe."
+        return erro
 
     def gravar(self, login, email, password):
         ficheiro = self.herokudb()
