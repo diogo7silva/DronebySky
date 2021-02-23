@@ -1,24 +1,21 @@
 {% extends 'layout.html' %}
-
 {% block body %}
 <p><br></p>
-<h2>Listagem de Clientes</h2>
+<h2>{{ title }}</h2>
 <p><br></p>
 
 <table border="16" align="center" ; cellpadding="8">
     <tr style="font-weight: bolder; background-color: #4CAF50">
-        <td>Id</td>
-        <td>Login</td>
-        <td>Email</td>
-        <td>Password</td>
-        <td>NIF</td>
-        <td>Nome</td>
-        <td>Morada</td>
+        {% for co in range(campos|count) %}
+        <td>
+            {{ campos[co][0].capitalize() }}
+        </td>
+        {% endfor %}
     </tr>
-    {% for li in range(0, max) %}
+    {% for li in range(tabela|count) %}
     <tr>
         <td style="font-weight: bold">{{ tabela[li][0] }}</td>
-        {% for co in range(1, 7) %}
+        {% for co in range(1, campos|count) %}
         <td align="left">
             {{ tabela[li][co] }}
         </td>

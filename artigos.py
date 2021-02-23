@@ -78,11 +78,24 @@ class Artigos:
         ficheiro.commit()
         ficheiro.close()
 
+    @property
     def lista(self):
         try:
             ficheiro = self.herokudb()
             db = ficheiro.cursor()
-            db.execute("select * from usr")
+            db.execute("select * from artigos")
+            valor = db.fetchall()
+            ficheiro.close()
+        except:
+            valor = ""
+        return valor
+
+    @property
+    def campos(self):
+        try:
+            ficheiro = self.herokudb()
+            db = ficheiro.cursor()
+            db.execute("SELECT column_name FROM information_schema.columns WHERE table_name = 'artigos';")
             valor = db.fetchall()
             ficheiro.close()
         except:
