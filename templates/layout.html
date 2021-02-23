@@ -27,13 +27,20 @@
         </div>
     </li>
     <li class="dropdown">
+        {% if usr.login %}
+        <a class="dropbtn" href="javascript:void(0)"><i style = "color: goldenrod" class="fa fa-fw fa-user"></i> {{ usr.login }}</a>
+        <div class="dropdown-content">
+            <a href="logout"><i class="fa fa-fw fa-lock"></i> Terminar Sessão</a>
+            <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Alterar Passe</a>
+            <a href="apagar"><i class="fas fa-user-minus"></i> Eliminar Conta</a>
+        </div>
+        {% else %}
         <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> Utilizador</a>
         <div class="dropdown-content">
             <a href="login"><i class="fa fa-fw fa-lock"></i> Iniciar Sessão</a>
             <a href="registo"><i class="fa fa-fw fa-user"></i> Registo</a>
-            <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Alterar Passe</a>
-            <a href="apagar"><i class="fas fa-user-minus"></i> Eliminar Conta</a>
         </div>
+        {% endif %}
     </li>
 </ul>
 
