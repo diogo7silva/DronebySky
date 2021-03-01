@@ -14,8 +14,17 @@ def inserirA():
         v3 = request.form['description']
         v4 = request.form['price']
         art.inserirA(v1, v2, v3, v4)
-    erro = "Artigo inserido com Sucesso."
+    erro = "Artigo inserido com sucesso."
     return render_template('artigos/inserirA.html', erro=erro, usr=usr, art=art)
+
+@app.route('/eliminarA', methods=['GET', 'POST'])
+def eliminarA():
+    if request.method == 'POST':
+        v1 = request.form['id']
+        title = "Eliminação do seu Artigo"
+        return render_template('tabela.html', title=title, tabela=art.listaA(v1), campos=art.campos, usr=usr)
+    erro = "Indique o id do seu Artigo a eliminar."
+    return render_template('artigos/eliminarA.html', erro=erro, usr=usr, art=art)
 
 @app.route('/tabela')
 def tabela():

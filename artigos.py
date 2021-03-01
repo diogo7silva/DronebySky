@@ -78,6 +78,17 @@ class Artigos:
         ficheiro.commit()
         ficheiro.close()
 
+    def listaA(self, id):
+        try:
+            ficheiro = self.herokudb()
+            db = ficheiro.cursor()
+            db.execute("select * FROM artigos where id=%s", (id))
+            valor = db.fetchall()
+            ficheiro.close()
+        except:
+            valor = ""
+        return valor
+
     @property
     def lista(self):
         try:
