@@ -22,13 +22,12 @@
         <div class="dropdown-content">
             <a href="consultarA"><i class="fas fa-layer-group"></i> Consultar Tabela</a>
             <a href="inserirA"><i class="fas fa-folder-plus"></i> Inserir Artigo</a>
-            <a href="alterarA"><i class="fas fa-recycle"></i> Alterar Preço</a>
-            <a href="eliminarA"><i class="fas fa-folder-minus"></i> Eliminar Artigo</a>
+            <a href="editarA"><i class="fas fa-folder-minus"></i> Editar Artigo</a>
         </div>
     </li>
     <li class="dropdown">
         {% if usr.login %}
-        <a class="dropbtn" href="javascript:void(0)"><i style = "color: goldenrod" class="fa fa-fw fa-user"></i> {{ usr.login }}</a>
+        <a class="dropbtn" href="javascript:void(0)"><i style = "color: LightGreen" class="fa fa-fw fa-user"></i> {{ usr.login }}</a>
         <div class="dropdown-content">
             <a href="logout"><i class="fa fa-fw fa-lock"></i> Terminar Sessão</a>
             <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Alterar Passe</a>

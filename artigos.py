@@ -24,6 +24,24 @@ class Artigos:
         return psycopg2.connect(host=mydb.Host, database=mydb.Database, user=mydb.User, password=mydb.Password,
                                 sslmode='require')
 
+    def select(self, id):
+        erro = None
+        try:
+            ficheiro = self.herokudb()
+            db = ficheiro.cursor()
+            db.execute("select * from artigos where id = %s", (id,))
+            valor = db.fetchone()
+            ficheiro.close()
+            self.id = valor[0]  # Número do produto
+            self.category = valor[1]  # Categoria
+            self.brand = valor[2]  # Marca
+            self.description = valor[3]  # Descrição
+            self.price = valor[4]  # Preço
+        except:
+            self.reset()
+            erro = "O artigo não existe!"
+        return erro
+
     def inserirA(self, category, brand, description, price):
         ficheiro = self.herokudb()
         db = ficheiro.cursor()
@@ -64,17 +82,17 @@ class Artigos:
         ficheiro.close()
         return valor
 
-    def alterar(self, login, password):
+    def alterar(self, id, price):
         ficheiro = self.herokudb()
         db = ficheiro.cursor()
-        db.execute("UPDATE usr SET password = %s WHERE login = %s", (self.code(password), login))
+        db.execute("UPDATE artigos SET price = %s WHERE id = %s", (price, id))
         ficheiro.commit()
         ficheiro.close()
 
-    def apaga(self, login):
+    def apaga(self, id):
         ficheiro = self.herokudb()
         db = ficheiro.cursor()
-        db.execute("DELETE FROM usr WHERE login = %s", (login,))
+        db.execute("DELETE FROM artigos WHERE id = %s", (id,))
         ficheiro.commit()
         ficheiro.close()
 
