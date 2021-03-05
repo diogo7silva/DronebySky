@@ -1,7 +1,7 @@
 body {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lightgray;
+    background-color: LightGray;
 }
 
 fieldset{
@@ -23,19 +23,19 @@ fieldset{
   float: left;
   text-align: center;
   padding: 12px;
-  color: white;
+  color: White;
   text-decoration: none;
   font-size: 17px;
 }
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
+  background-color: Black;
 }
 
 /* Current/active navbar link */
 .active {
-  background-color: #0000CD;
+  background-color: MediumBlue;
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
@@ -62,14 +62,14 @@ li {
 
 li a, .dropbtn {
   display: inline-block;
-  color: white;
+  color: White;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #00004a;
 }
 
 li.dropdown {
