@@ -7,7 +7,13 @@
     <legend>Introduza o novo Artigo</legend>
     <form method="post">
         <h4>Categoria</h4>
-        <input type='text' name='category' required>
+        <input list="category" name="category" required>
+        <datalist id="category">
+            {% set lcat = art.listaC %}
+            {% for item in range(lcat|count) %}
+            <option value="{{ lcat[item][0] }}">
+                {% endfor %}
+        </datalist>
         <h4>Marca</h4>
         <input type='text' name='brand' required>
         <h4>Descrição</h4>
