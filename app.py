@@ -38,7 +38,7 @@ def editarA():
         else:
             v1 = request.form['id']
             erro = art.select(v1)
-    return render_template('Artigos/editarA.html', erro=erro, usr=usr, art=art)
+    return render_template('artigos/editarA.html', erro=erro, usr=usr, art=art)
 
 
 @app.route('/eliminarA', methods=['GET', 'POST'])

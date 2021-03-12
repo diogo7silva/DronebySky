@@ -15,7 +15,13 @@
                 {% endfor %}
         </datalist>
         <h4>Marca</h4>
-        <input type='text' name='brand' required>
+        <input list="brand" name="brand" required>
+        <datalist id="brand">
+            {% set lcat = art.listaM %}
+            {% for item in range(lcat|count) %}
+            <option value="{{ lcat[item][0] }}">
+                {% endfor %}
+        </datalist>
         <h4>Descrição</h4>
         <input type='text' name='description' required>
         <h4>Preço</h4>

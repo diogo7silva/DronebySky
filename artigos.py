@@ -19,10 +19,11 @@ class Artigos:
         self.updated = None  # Data de alteração
         ficheiro = self.herokudb()
         db = ficheiro.cursor()
-        db.execute("CREATE TABLE IF NOT EXISTS categorias (id serial primary key, category text)")
-        db.execute("CREATE TABLE IF NOT EXISTS artigos (id serial primary key, category int, brand text,"
-                   "description text, price numeric,reference text, ean text, stock int, created date, updated date,"
-                   "CONSTRAINT fk_category foreign key (category) references categorias(id))")
+        db.execute('CREATE TABLE IF NOT EXISTS categorias (id SERIAL PRIMARY KEY, category TEXT)')
+        db.execute('CREATE TABLE IF NOT EXISTS marca (id SERIAL PRIMARY KEY, brand TEXT)')
+        db.execute('CREATE TABLE IF NOT EXISTS artigos (id SERIAL PRIMARY KEY, category INT, brand INT,'
+                   'description TEXT, price NUMERIC,reference TEXT, ean TEXT, stock INT, created DATE, updated DATE,'
+                   'FOREIGN KEY (category) REFERENCES categorias(id), FOREIGN KEY (brand) REFERENCES marca(id))')
         ficheiro.commit()
         ficheiro.close()
 
@@ -58,7 +59,11 @@ class Artigos:
         if not catId:
             self.inserirC(category)
             catId = self.existeC(category)
-        db.execute("INSERT INTO artigos VALUES (DEFAULT ,%s, %s, %s, %s)", (catId, brand, description, price,))
+        marId = self.existeM(brand)
+        if not marId:
+            self.inserirM(brand)
+            marId = self.existeM(brand)
+        db.execute("INSERT INTO artigos VALUES (DEFAULT ,%s, %s, %s, %s)", (catId, marId, description, price,))
         ficheiro.commit()
         ficheiro.close()
 
@@ -66,6 +71,13 @@ class Artigos:
         ficheiro = self.herokudb()
         db = ficheiro.cursor()
         db.execute("INSERT INTO categorias VALUES (DEFAULT ,%s)", (category,))
+        ficheiro.commit()
+        ficheiro.close()
+
+    def inserirM(self, brand):
+        ficheiro = self.herokudb()
+        db = ficheiro.cursor()
+        db.execute("INSERT INTO marca VALUES (DEFAULT ,%s)", (brand,))
         ficheiro.commit()
         ficheiro.close()
 
@@ -102,6 +114,17 @@ class Artigos:
             valor = None
         return valor
 
+    def existeM(self, brand):
+        try:
+            ficheiro = self.herokudb()
+            db = ficheiro.cursor()
+            db.execute("SELECT id FROM marca WHERE brand = %s", (brand,))
+            valor = db.fetchone()
+            ficheiro.close()
+        except:
+            valor = None
+        return valor
+
     def log(self, login, password):
         ficheiro = self.herokudb()
         db = ficheiro.cursor()
@@ -124,23 +147,19 @@ class Artigos:
         ficheiro.commit()
         ficheiro.close()
 
-    def listaA(self, id):
-        try:
-            ficheiro = self.herokudb()
-            db = ficheiro.cursor()
-            db.execute("select * FROM artigos where id=%s", (id))
-            valor = db.fetchall()
-            ficheiro.close()
-        except:
-            valor = ""
-        return valor
+    @property
+    def campos(self):
+        return [('número',), ('categorias',), ('marca',), ('descrição',), ('preço',)]
 
     @property
     def lista(self):
         try:
             ficheiro = self.herokudb()
             db = ficheiro.cursor()
-            db.execute("select * from artigos")
+            db.execute('SET lc_monetary TO "pt_PT.utf8"')
+            db.execute("SELECT artigos.id, c.category, m.brand, description,"
+                       "price::MONEY FROM artigos JOIN categorias c ON artigos.category = c.id JOIN marca m ON m.id = artigos.brand")
+
             valor = db.fetchall()
             ficheiro.close()
         except:
@@ -160,11 +179,11 @@ class Artigos:
         return valor
 
     @property
-    def campos(self):
+    def listaM(self):
         try:
             ficheiro = self.herokudb()
             db = ficheiro.cursor()
-            db.execute("SELECT column_name FROM information_schema.columns WHERE table_name = 'artigos';")
+            db.execute("select brand from marca")
             valor = db.fetchall()
             ficheiro.close()
         except:
