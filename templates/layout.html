@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>LojaIV</title>
+    <title>Drone by Sky</title>
 
-    <link href="static/favicon word.png" rel="shortcut icon">
+    <link href="static/drone.png" rel="shortcut icon">
     <link href="static/style.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
 
@@ -14,32 +14,32 @@
 <body>
 
 <ul>
-    <li><a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
-    <li><a href="tabela"><i class="fa fa-fw fa-search"></i> Search</a></li>
-    <li><a href="#"><i class="fa fa-globe"></i> Company</a></li>
-    <li><a href="#"><i class="fa fa-mail-bulk"></i> Contact Us</a></li>
+    <li><a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a></li> <!--Página Inicial-->
+    <li><a href="tabela"><i class="fa fa-fw fa-search"></i> Search</a></li> <!--Procura-->
+    <li><a href="company"><i class="fa fa-globe"></i> Company</a></li> <!--Sobre a empresa-->
+    <li><a href="contact"><i class="fa fa-mail-bulk"></i> Contact Us</a></li> <!--Contacte-nos-->
     <li class="dropdown">
-        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-parachute-box"></i> Artigos</a>
+        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-parachute-box"></i> Products</a> <!--Produtos-->
         <div class="dropdown-content">
             <a href="consultarA"><i class="fa fa-layer-group"></i> Consultar Tabela</a>
             <a href="inserirA"><i class="fa fa-folder-plus"></i> Inserir Artigo</a>
             <a href="editarA"><i class="fa fa-folder-minus"></i> Editar Artigo</a>
         </div>
-    <li><a href="#"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
+    <li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
     </li>
     <li class="dropdown">
         {% if usr.login %}
         <a class="dropbtn" href="javascript:void(0)"><i style = "color: RoyalBlue" class="fa fa-fw fa-user"></i> {{ usr.login }}</a>
         <div class="dropdown-content">
             <a href="logout"><i class="fa fa-fw fa-lock"></i> Terminar Sessão</a>
-            <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Alterar Passe</a>
+            <a href="new passe"><i class="fa fa-fw fa-recycle"></i> Alterar Passe</a>
             <a href="apagar"><i class="fas fa-user-minus"></i> Eliminar Conta</a>
         </div>
         {% else %}
-        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> Utilizador</a>
+        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> My Account</a>
         <div class="dropdown-content">
-            <a href="login"><i class="fa fa-fw fa-lock"></i> Iniciar Sessão</a>
-            <a href="registo"><i class="fa fa-fw fa-user"></i> Registo</a>
+            <a href="login"><i class="fa fa-fw fa-lock"></i> Login</a> <!--Iniciar Sessão-->
+            <a href="registo"><i class="fa fa-fw fa-user"></i> Register</a> <!--Registo-->
         </div>
         {% endif %}
     </li>

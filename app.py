@@ -142,6 +142,17 @@ def newpasse():
             usr.alterar(v1, v2)
     return render_template('utilizadores/newpasse.html', erro=erro, usr=usr)
 
+@app.route('/')
+def company():
+    return render_template('company.html', usr=usr)
+
+@app.route('/')
+def contact():
+    return render_template('contact.html', usr=usr)
+
+@app.route('/')
+def cart():
+    return render_template('cart.html', usr=usr)
 
 if __name__ == '__main__':
     app.run(debug=True)
