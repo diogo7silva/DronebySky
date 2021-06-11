@@ -155,4 +155,4 @@ def cart():
     return render_template('cart.html', usr=usr)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
