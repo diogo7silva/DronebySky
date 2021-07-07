@@ -53,13 +53,13 @@ def eliminarA():
 
 @app.route('/tabela')
 def tabela():
-    title = "Lista de Utilizadores"
+    title = "Lista de Utilizadores 📦🛒🗣📂"
     return render_template('tabela.html', title=title, tabela=usr.lista, campos=usr.campos, usr=usr)
 
 
 @app.route('/consultarA')
 def consultarA():
-    title = "Lista de Artigos"
+    title = "Lista de Artigos 🛩"
     return render_template('tabela.html', title=title, tabela=art.lista, campos=art.campos, usr=usr)
 
 
@@ -142,17 +142,21 @@ def newpasse():
             usr.alterar(v1, v2)
     return render_template('utilizadores/newpasse.html', erro=erro, usr=usr)
 
+
 @app.route('/')
 def company():
     return render_template('company.html', usr=usr)
+
 
 @app.route('/')
 def contact():
     return render_template('contact.html', usr=usr)
 
+
 @app.route('/')
 def cart():
     return render_template('cart.html', usr=usr)
 
+
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)

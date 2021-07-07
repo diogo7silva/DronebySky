@@ -1,30 +1,39 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-<h2>Alterar Artigo</h2>
+<h2>Alterar Artigo 🛩</h2>
 <fieldset>
     <legend>Dados do seu Artigo</legend>
     <form method="post">
         {% if art.id %}
-        <h4>Número do seu Artigo</h4>
+        <h4><i class="fas fa-sort-numeric-up-alt"></i> Número do seu Artigo</h4>
+
         <input type='text' name='id' value="{{ art.id }}" readonly>
         <h4>Categoria</h4>
+
         <input type='text' name='category' value="{{ art.category }}" readonly>
         <h4>Marca</h4>
+
         <input type='text' name='brand' value="{{ art.brand }}" readonly>
         <h4>Descrição</h4>
+
         <input type='text' name='description' value="{{ art.description }}" readonly>
         <h4>Preço</h4>
+
         <input type='text' name='price' value="{{ art.price }}">
-        <p><br></p>
+        <p><br></p  >
+
         <input type='submit' value='Alterar' name="edit">
         <input type='submit' value='Eliminar' name="delete">
         <input type='submit' value='Cancelar' name="cancel">
         {% else %}
-        <h4>Número de Artigo</h4>
+
+        <h4><i class="fas fa-sort-numeric-down"></i> Número de Artigo</h4>
         <input type='text' name='id' required>
+
         <p><br></p>
         <input type='submit' value="Pesquisar">
+
         {% endif %}
     </form>
 </fieldset>

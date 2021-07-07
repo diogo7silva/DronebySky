@@ -2,31 +2,36 @@
 
 {% block body %}
 
-<h2>Inserir Artigo</h2>
+<h2>Inserir Artigo 🛩</h2>
 <fieldset>
-    <legend>Introduza o novo Artigo</legend>
+    <legend>Introduza o seu novo Artigo</legend>
     <form method="post">
-        <h4>Categoria</h4>
+
+        <h4><i class="fas fa-sort-alpha-down"></i> Categoria</h4>
         <input list="category" name="category" required>
         <datalist id="category">
             {% set lcat = art.listaC %}
             {% for item in range(lcat|count) %}
             <option value="{{ lcat[item][0] }}">
                 {% endfor %}
+
         </datalist>
-        <h4>Marca</h4>
+        <h4><i class="fas fa-code-branch"></i> Marca</h4>
         <input list="brand" name="brand" required>
         <datalist id="brand">
             {% set lcat = art.listaM %}
             {% for item in range(lcat|count) %}
             <option value="{{ lcat[item][0] }}">
                 {% endfor %}
+
         </datalist>
-        <h4>Descrição</h4>
+        <h4><i class="fas fa-edit"></i> Descrição</h4>
         <input type='text' name='description' required>
-        <h4>Preço</h4>
+
+        <h4><i class="fas fa-hand-holding-usd"></i> Preço</h4>
         <input type='text' name='price' required>
         <p><br></p>
+
         <input type='submit' value="Submeter">
     </form>
 </fieldset>
