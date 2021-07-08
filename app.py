@@ -143,17 +143,22 @@ def newpasse():
     return render_template('utilizadores/newpasse.html', erro=erro, usr=usr)
 
 
-@app.route('/')
+@app.route('/company')
 def company():
     return render_template('company.html', usr=usr)
 
 
-@app.route('/')
+@app.route('/contact us')
 def contact():
-    return render_template('contact.html', usr=usr)
+    return render_template('contact us.html', usr=usr)
 
 
-@app.route('/')
+@app.route('/testimonials')
+def testimonials():
+    return render_template('testimonials.html', usr=usr)
+
+
+@app.route('/cart')
 def cart():
     return render_template('cart.html', usr=usr)
 
