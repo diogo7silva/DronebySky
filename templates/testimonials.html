@@ -1,16 +1,40 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-<html lang="pt">
+<html lang="pt" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
 
-<div class="contact-section">
-    <h2>Testimonials Section</h2> <!--Secção de depoimentos-->
+<div class="testimonials">
+    <div class="container">
+        <h2>Testimonials Section</h2> <!--Secção de depoimentos-->
+        <div class="borders"></div>
 
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                    <img src="static/pic1.png" alt="">
+                    <p></p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                    <blockquote>Olá, eu sou o Diogo Silva e tenho 19 anos.</blockquote>
+                    <h3>Diogo Silva <span>Founder / CEO at Drone by Sky</span></h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

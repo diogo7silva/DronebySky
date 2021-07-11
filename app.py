@@ -53,13 +53,13 @@ def eliminarA():
 
 @app.route('/tabela')
 def tabela():
-    title = "Lista de Utilizadores 📦🛒🗣📂"
+    title = "Lista de Utilizadores 🛩🗣📂"
     return render_template('tabela.html', title=title, tabela=usr.lista, campos=usr.campos, usr=usr)
 
 
 @app.route('/consultarA')
 def consultarA():
-    title = "Lista de Artigos 🛩"
+    title = "Lista de Artigos 🛒"
     return render_template('tabela.html', title=title, tabela=art.lista, campos=art.campos, usr=usr)
 
 
