@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% block body %}
+
 <p><br></p>
 <h2>{{ title }}</h2>
 <p><br></p>
@@ -12,16 +13,21 @@
         </td>
         {% endfor %}
     </tr>
-    {% for li in range(tabela|count) %}
+    {% for li in range(accounts|count) %}
     <tr>
-        <td style="font-weight: bold">{{ tabela[li][0] }}</td>
+        <td style="font-weight: bold">{{ accounts[li][0] }}</td>
         {% for co in range(1, campos|count) %}
         <td align="left">
-            {{ tabela[li][co] }}
+            {{ accounts[li][co] }}
         </td>
         {% endfor %}
     </tr>
     {% endfor %}
 </table>
+
+<!--Scroll top button-->
+<a href="" id="link-topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
 
 {% endblock %}

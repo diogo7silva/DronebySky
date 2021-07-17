@@ -1,41 +1,48 @@
 {% extends 'layout.html' %}
-
 {% block body %}
-<h2>Alterar Artigo 📦</h2>
+
+<h2>Edit Article 📦</h2> <!--Alterar Artigo-->
 <fieldset>
-    <legend>Dados do seu Artigo</legend>
+
+    <legend>Your Article details</legend>
     <form method="post">
         {% if art.id %}
-        <h4><i class="fas fa-sort-numeric-up-alt"></i> Número do seu Artigo</h4>
 
+        <h4><i class="fas fa-sort-numeric-down"></i> Your article number</h4>
         <input type='text' name='id' value="{{ art.id }}" readonly>
-        <h4>Categoria</h4>
 
+        <h4><i class="fas fa-sort-alpha-down"></i> Category</h4>
         <input type='text' name='category' value="{{ art.category }}" readonly>
-        <h4>Marca</h4>
 
+        <h4><i class="fas fa-code-branch"></i> Brand</h4>
         <input type='text' name='brand' value="{{ art.brand }}" readonly>
-        <h4>Descrição</h4>
 
+        <h4><i class="fas fa-edit"></i> Description</h4>
         <input type='text' name='description' value="{{ art.description }}" readonly>
-        <h4>Preço</h4>
 
+        <h4><i class="fas fa-hand-holding-usd"></i> Price</h4>
         <input type='text' name='price' value="{{ art.price }}">
-        <p><br></p  >
 
-        <input type='submit' value='Alterar' name="edit">
-        <input type='submit' value='Eliminar' name="delete">
-        <input type='submit' value='Cancelar' name="cancel">
+        <p></p>
+        <input type='submit' value='Edit' name="edit">
+        <input type='submit' value='Delete' name="delete">
+        <input type='submit' value='Cancel' name="cancel">
         {% else %}
 
-        <h4><i class="fas fa-sort-numeric-down"></i> Número de Artigo</h4>
+        <h4><i class="fas fa-sort-numeric-down"></i> Article Number</h4>
         <input type='text' name='id' required>
 
-        <p><br></p>
-        <input type='submit' value="Pesquisar">
+        <p></p>
+        <input type='submit' value="Search">
 
         {% endif %}
     </form>
 </fieldset>
+
+<!--Scroll top button-->
+<a href="" id="link-topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
 {% if erro %}<h3>{{ erro }}</h3>{% endif %}
 {% endblock %}

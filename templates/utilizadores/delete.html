@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-<h2>Change Password</h2> <!--Alterar a Palavra-Passe-->
+<h2>Delete Account</h2> <!--Eliminar Conta-->
 
 <fieldset>
     <legend>Introduce your dices</legend> <!--Introduza os seus dados-->
@@ -10,17 +10,11 @@
         <h4><i class="fas fa-street-view"></i> User</h4>
         <input type='text' name='utilizador' required>
 
-        <h4><i class="fas fa-key"></i> Old Password</h4>
-        <input type='password' name='apasse' required>
-
-        <h4><i class="fas fa-key"></i> New Password</h4>
+        <h4><i class="fas fa-key"></i> Password</h4>
         <input type='password' name='passe' required>
 
-        <h4><i class="fas fa-user-check"></i> Confirm the Password</h4>
-        <input type='password' name='cpasse' required>
-
         <p></p>
-        <input type='submit' value="Submit">
+        <input type='submit' value="Delete">
     </form>
 </fieldset>
 

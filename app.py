@@ -16,7 +16,7 @@ def inserirA():
         v3 = request.form['description']
         v4 = request.form['price']
         art.inserirA(v1, v2, v3, v4)
-        erro = "Artigo inserido com sucesso."
+        erro = "Article successfully inserted."
     return render_template('artigos/inserirA.html', erro=erro, usr=usr, art=art)
 
 
@@ -46,24 +46,24 @@ def eliminarA():
     if request.method == 'POST':
         v1 = request.form['id']
         title = "Eliminação do seu Artigo"
-        return render_template('tabela.html', title=title, tabela=art.listaA(v1), campos=art.campos, usr=usr)
+        return render_template('accounts.html', title=title, accounts=art.listaA(v1), campos=art.campos, usr=usr)
     erro = "Indique o id do seu Artigo a eliminar."
     return render_template('artigos/eliminarA.html', erro=erro, usr=usr, art=art)
 
 
-@app.route('/tabela')
-def tabela():
-    title = "Lista de Utilizadores 🛩🗣📂"
-    return render_template('tabela.html', title=title, tabela=usr.lista, campos=usr.campos, usr=usr)
+@app.route('/accounts')
+def accounts():
+    title = "User Accounts 📂"
+    return render_template('accounts.html', title=title, accounts=usr.lista, campos=usr.campos, usr=usr)
 
 
 @app.route('/consultarA')
 def consultarA():
-    title = "Lista de Artigos 🛒"
-    return render_template('tabela.html', title=title, tabela=art.lista, campos=art.campos, usr=usr)
+    title = "Article List 🛒"
+    return render_template('accounts.html', title=title, accounts=art.lista, campos=art.campos, usr=usr)
 
 
-@app.route('/registo', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def route():
     erro = None
     if request.method == 'POST':
@@ -72,13 +72,13 @@ def route():
         v3 = request.form['passe']
         v4 = request.form['cpasse']
         if usr.existe(v1):
-            erro = 'O Utilizador já existe.'
+            erro = 'The user already exists.'
         elif v3 != v4:
-            erro = 'A palavra passe não coincide.'
+            erro = 'Password does not match.'
         else:
-            erro = 'Utilizador criado com Sucesso.'
+            erro = 'User created with Success.'
             usr.gravar(v1, v2, v3)
-    return render_template('utilizadores/registo.html', erro=erro, usr=usr)
+    return render_template('utilizadores/register.html', erro=erro, usr=usr)
 
 
 @app.route('/')
@@ -93,12 +93,12 @@ def login():
         v1 = request.form['utilizador']
         v2 = request.form['passe']
         if not usr.existe(v1):
-            erro = 'O Utilizador não existe.'
+            erro = 'User does not exist.'
         elif not usr.log(v1, v2):
-            erro = 'A palavra passe está errada.'
+            erro = 'The password is wrong.'
         else:
             usr.login = v1
-            erro = 'Bem-Vindo.'
+            erro = 'Welcome!'
     return render_template('utilizadores/login.html', erro=erro, usr=usr)
 
 
@@ -108,20 +108,20 @@ def logout():
     return redirect('/')
 
 
-@app.route('/apagar', methods=['GET', 'POST'])
-def apagar():
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
     erro = None
     if request.method == 'POST':
         v1 = request.form['utilizador']
         v2 = request.form['passe']
         if not usr.existe(v1):
-            erro = 'O Utilizador não existe.'
+            erro = 'User does not exist.'
         elif not usr.log(v1, v2):
-            erro = 'A palavra passe está errada.'
+            erro = 'The password is wrong.'
         else:
             usr.apaga(v1)
-            erro = 'Conta Eliminada com Sucesso.'
-    return render_template('utilizadores/apagar.html', erro=erro, usr=usr)
+            erro = 'Account Deleted Successfully.'
+    return render_template('utilizadores/delete.html', erro=erro, usr=usr)
 
 
 @app.route('/newpasse', methods=['GET', 'POST'])
@@ -133,19 +133,29 @@ def newpasse():
         v2 = request.form['passe']
         v3 = request.form['cpasse']
         if not usr.existe(v1):
-            erro = 'O Utilizador não existe.'
+            erro = 'User does not exist.'
         elif not usr.log(v1, v0):
-            erro = 'A palavra passe está errada.'
+            erro = 'The password is wrong.'
         elif v2 != v3:
-            erro = 'A palavra passe não coincide.'
+            erro = 'Password does not match.'
         else:
             usr.alterar(v1, v2)
     return render_template('utilizadores/newpasse.html', erro=erro, usr=usr)
 
 
+@app.route('/drones')
+def drones():
+    return render_template('drones.html', usr=usr)
+
+
 @app.route('/company')
 def company():
     return render_template('company.html', usr=usr)
+
+
+@app.route('/about me')
+def me():
+    return render_template('about me.html', usr=usr)
 
 
 @app.route('/contact us')
@@ -156,11 +166,6 @@ def contact():
 @app.route('/testimonials')
 def testimonials():
     return render_template('testimonials.html', usr=usr)
-
-
-@app.route('/cart')
-def cart():
-    return render_template('cart.html', usr=usr)
 
 
 if __name__ == '__main__':

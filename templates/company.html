@@ -1,17 +1,40 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-<html lang="pt">
+<html lang="pt" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<div class="contact-section">
-    <h2>Company</h2> <!--Empresa-->
+<div class="testimonials">
+    <div class="container">
+        <h2>About my Company</h2> <!--Sobre a minha empresa-->
+        <div class="borders"></div>
 
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="profiles">
+                    <img src="static/drone-delivery.png" class="pic">
+
+                    <blockquote>O negócio da empresa basicamente seria venda de produtos (não especificado) ao público alvo e
+entrega do mesmo produto via drone imediatamente após a encomenda no site e respetiva
+compra.</blockquote>
+                    <h3>Diogo Silva <span>Founder / CEO at Drone by Sky</span></h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!--Scroll top button-->
+<a href="" id="link-topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
 </body>
 </html>
 

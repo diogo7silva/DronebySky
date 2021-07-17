@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-<h2>Change Password</h2> <!--Alterar a Palavra-Passe-->
+<h2>Register</h2> <!--Registo-->
 
 <fieldset>
     <legend>Introduce your dices</legend> <!--Introduza os seus dados-->
@@ -10,10 +10,20 @@
         <h4><i class="fas fa-street-view"></i> User</h4>
         <input type='text' name='utilizador' required>
 
-        <h4><i class="fas fa-key"></i> Old Password</h4>
-        <input type='password' name='apasse' required>
+        <!-- Campo de género com 2 opções para escolha (select option) e css de classe "género" -->
+        <h4><i class="fas fa-venus-mars"></i> Gender</h4>
+        <div>
+            <select id="género">
+                <option selected disabled value="">Select your gender</option>
+                <option>Masculine</option>
+                <option>Feminine</option>
+            </select>
+        </div>
 
-        <h4><i class="fas fa-key"></i> New Password</h4>
+        <h4><i class="fas fa-at"></i> Email</h4>
+        <input type='text' name='email' required>
+
+        <h4><i class="fas fa-key"></i> Password</h4>
         <input type='password' name='passe' required>
 
         <h4><i class="fas fa-user-check"></i> Confirm the Password</h4>

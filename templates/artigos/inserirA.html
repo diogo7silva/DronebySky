@@ -1,39 +1,45 @@
 {% extends 'layout.html' %}
-
 {% block body %}
 
-<h2>Inserir Artigo 📦</h2>
+<h2>Insert Article 📦</h2> <!--Inserir Artigo-->
 <fieldset>
-    <legend>Introduza o seu novo Artigo</legend>
+
+    <legend>Insert your new Article</legend>
     <form method="post">
 
-        <h4><i class="fas fa-sort-alpha-down"></i> Categoria</h4>
+        <h4><i class="fas fa-sort-alpha-down"></i> Category</h4>
         <input list="category" name="category" required>
         <datalist id="category">
             {% set lcat = art.listaC %}
             {% for item in range(lcat|count) %}
             <option value="{{ lcat[item][0] }}">
                 {% endfor %}
-
         </datalist>
-        <h4><i class="fas fa-code-branch"></i> Marca</h4>
+
+        <h4><i class="fas fa-code-branch"></i> Brand</h4>
         <input list="brand" name="brand" required>
         <datalist id="brand">
             {% set lcat = art.listaM %}
             {% for item in range(lcat|count) %}
             <option value="{{ lcat[item][0] }}">
                 {% endfor %}
-
         </datalist>
-        <h4><i class="fas fa-edit"></i> Descrição</h4>
+
+        <h4><i class="fas fa-edit"></i> Description</h4>
         <input type='text' name='description' required>
 
-        <h4><i class="fas fa-hand-holding-usd"></i> Preço</h4>
+        <h4><i class="fas fa-hand-holding-usd"></i> Price</h4>
         <input type='text' name='price' required>
-        <p><br></p>
 
-        <input type='submit' value="Submeter">
+        <p></p>
+        <input type='submit' value="Submit">
     </form>
 </fieldset>
+
+<!--Scroll top button-->
+<a href="" id="link-topo">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
 {% if erro %}<h1>{{ erro }}</h1>{% endif %}
 {% endblock %}
