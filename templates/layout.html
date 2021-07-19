@@ -1,5 +1,6 @@
 <!DOCTYPE html> <!--tipo de documento (html)-->
 <html lang="pt"> <!--linguagem do html-->
+
 <head> <!--cabeçalho-->
     <meta charset="UTF-8"> <!--Linguagem unicode-->
     <title>Drone by Sky</title> <!--titulo da página-->
@@ -10,43 +11,73 @@
 
     {% block head %}
     {% endblock %}
+
 </head>
+
 <body>
 
-<ul>
-    <li><a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a></li> <!--Página Inicial-->
-    <li><a href="accounts"><i class="fa fa-fw fa-search"></i> User Accounts</a></li> <!--Lista de Utilizadores-->
-    <li><a href="drones"><i class="fa fa-parachute-box"></i> Drones</a></li> <!--Especificações dos drones-->
-    <li><a href="company"><i class="fa fa-globe"></i> Company</a></li> <!--Sobre a empresa-->
-    <li><a href="about me"><i class="fa fa-globe"></i> About Me</a></li> <!--Sobre mim-->
-    <li><a href="contact us"><i class="fa fa-mail-bulk"></i> Contact Us</a></li> <!--Contacte-nos-->
-    <li><a href="testimonials"><i class="fa fa-mail-bulk"></i> Testimonials</a></li> <!--Secção de depoimentos-->
-    <li class="dropdown">
-        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-parachute-box"></i> Products</a> <!--Produtos-->
-        <div class="dropdown-content">
-            <a href="consultarA"><i class="fa fa-layer-group"></i> Consult Table</a>
-            <a href="inserirA"><i class="fa fa-folder-plus"></i> Insert Article</a>
-            <a href="editarA"><i class="fa fa-folder-minus"></i> Edit Article</a>
-        </div>
-    </li>
-    <li class="dropdown">
-        {% if usr.login %}
-        <a class="dropbtn" href="javascript:void(0)"><i style="color: RoyalBlue" class="fa fa-fw fa-user"></i> {{
-            usr.login }}</a>
-        <div class="dropdown-content">
-            <a href="logout"><i class="fa fa-fw fa-lock"></i> Logout</a>
-            <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Change Password</a>
-            <a href="delete"><i class="fas fa-user-minus"></i> Delete Account</a>
-        </div>
-        {% else %}
-        <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> My Account</a>
-        <div class="dropdown-content">
-            <a href="login"><i class="fa fa-fw fa-lock"></i> Login</a> <!--Iniciar Sessão-->
-            <a href="register"><i class="fa fa-fw fa-user"></i> Register</a> <!--Registo-->
-        </div>
-        {% endif %}
-    </li>
+<ul id="menu">
+    <ul>
+        <li><a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a></li> <!--Página Inicial-->
+
+        <li><a href="accounts"><i class="fa fa-fw fa-search"></i> User Accounts</a></li> <!--Lista de Utilizadores-->
+
+        <li><a href="drones"><i class="fa fa-parachute-box"></i> Drones</a></li> <!--Especificações dos Drones-->
+
+        <li><a href="company"><i class="fa fa-globe"></i> Company</a></li> <!--Sobre a Empresa-->
+
+        <li><a href="about me"><i class="fa fa-globe"></i> About Me</a></li> <!--Sobre Mim-->
+
+        <li><a href="contact us"><i class="fa fa-mail-bulk"></i> Contact Us</a></li> <!--Contacte-nos-->
+
+        <li><a href="testimonials"><i class="fa fa-mail-bulk"></i> Testimonials</a></li> <!--Secção de Depoimentos-->
+
+        <li class="dropdown">
+            <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-parachute-box"></i> Products</a>
+            <!--Produtos-->
+
+            <div class="dropdown-content">
+                <a href="consultarA"><i class="fa fa-layer-group"></i> Consult Table</a>
+                <a href="inserirA"><i class="fa fa-folder-plus"></i> Insert Article</a>
+                <a href="editarA"><i class="fa fa-folder-minus"></i> Edit Article</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            {% if usr.login %}
+
+            <a class="dropbtn" href="javascript:void(0)"><i style="color: RoyalBlue" class="fa fa-fw fa-user"></i> {{
+                usr.login }}</a>
+
+            <div class="dropdown-content">
+                <a href="logout"><i class="fa fa-fw fa-lock"></i> Logout</a>
+                <a href="newpasse"><i class="fa fa-fw fa-recycle"></i> Change Password</a>
+                <a href="delete"><i class="fas fa-user-minus"></i> Delete Account</a>
+            </div>
+
+            {% else %}
+
+            <a class="dropbtn" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> My Account</a>
+            <!--Minha Conta-->
+
+            <div class="dropdown-content">
+                <a href="login"><i class="fa fa-fw fa-lock"></i> Login</a> <!--Iniciar Sessão-->
+                <a href="register"><i class="fa fa-fw fa-user"></i> Register</a> <!--Registo-->
+
+            </div>
+
+            {% endif %}
+
+        </li>
+    </ul>
 </ul>
+
+<div class="search-box">
+    <input id="search" class="search-txt" type="text" name="" placeholder="Type to search">
+    <a id="myLink" class="search-btn">
+        <i class="fa fa-search"></i>
+    </a>
+</div>
 
 </body>
 </html>

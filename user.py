@@ -29,7 +29,7 @@ class User:
             ficheiro.commit()
             ficheiro.close()
         except:
-            erro = "A tabela não existe."
+            erro = "The table does not exist."  # A tabela não existe.
         return erro
 
     def gravar(self, login, email, password):

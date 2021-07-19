@@ -48,7 +48,7 @@ class Artigos:
             self.price = valor[4]  # Preço
         except:
             self.reset()
-            erro = "O artigo não existe!"
+            erro = "The article does not exist!"  # O artigo não existe!
         return erro
 
     def inserirA(self, category, brand, description, price):
@@ -89,7 +89,7 @@ class Artigos:
             ficheiro.commit()
             ficheiro.close()
         except:
-            erro = "A tabela não existe."
+            erro = "The table does not exist."  # A tabela não existe.
         return erro
 
     def existe(self, login):
