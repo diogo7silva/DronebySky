@@ -6,6 +6,12 @@ body {
     background-color: LightGray;
 }
 
+fieldset {
+    padding: 25px;
+    width: 225px;
+    margin: auto;
+}
+
 
 /* Classe para criar uma barra em baixo de qualquer frase */
 /* Index - <div class="border"></div> */
@@ -16,11 +22,6 @@ body {
     margin: 10px auto;
 } */
 
-fieldset {
-    padding: 25px;
-    width: 225px;
-    margin: auto;
-}
 
 /* Imagem do Drone inicial */
 #drone-box {
@@ -63,25 +64,29 @@ fieldset {
     overflow: auto;
 }
 
+
 /* Navbar links */
 .navbar a {
     float: left;
     text-align: center;
     padding: 12px;
-    color: White;
+    color: #ffffff;
     text-decoration: none;
     font-size: 17px;
 }
+
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
     background-color: Black;
 }
 
+
 /* Current/active navbar link */
 .active {
     background-color: #000099;
 }
+
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
@@ -108,7 +113,7 @@ li {
 
 li a, .dropbtn {
     display: inline-block;
-    color: White;
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -132,7 +137,7 @@ li.dropdown {
 }
 
 .dropdown-content a {
-    color: black;
+    color: #111111;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -178,13 +183,13 @@ li.dropdown {
 /* Search Box */
 .search-box {
     position: absolute;
-    top: 45%;
-    right: 40%;
+    top: 10%; /* altura */
+    right: 0.60%; /* altura */
     background: -webkit-linear-gradient(to right, #000099, #00004a);
     background: linear-gradient(to left, #000099, #00004a);
     height: 40px;
     border-radius: 40px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .search-btn {
@@ -384,7 +389,7 @@ footer {
     text-align: left;
 }
 
-/* Classe de cor universal para o botão */
+/* Classe de cor universal para o botão dentro da carta */
 .btn {
     background: #6a3093;
     background: -webkit-linear-gradient(to right, #000099, #8e54e9);
@@ -696,18 +701,11 @@ textarea.contact-form-text {
     margin: 26px auto;
 }
 
-/* Colunas */
+/* Colunas dos depoimentos (testimonials) */
 .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.col {
-    flex: 50.50%;
-    max-width: 50.50%;
-    box-sizing: border-box;
-    padding: 15px;
 }
 
 .profile {
