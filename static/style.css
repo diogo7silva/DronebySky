@@ -192,6 +192,7 @@ li.dropdown {
     padding: 5px;
 }
 
+
 .search-btn {
     color: #ffffff;
     float: left;
@@ -283,6 +284,7 @@ footer {
     box-shadow: 0 0.1rem 0.6rem #00000009;
 }
 
+/********************************************/
 
 /* Drones */
 /* Utilização da área dos drones */
@@ -400,7 +402,7 @@ footer {
     box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
 }
 
-/* Botão Saber mais da cada carta */
+/* Botão Comprar de cada carta */
 .card-info button {
     width: 8rem;
     height: 2.5rem;
@@ -411,97 +413,6 @@ footer {
     bottom: 5rem;
     opacity: 1;
     visibility: visible;
-}
-
-
-/* Contact Us */
-.borders {
-    width: 160px;
-    height: 5px;
-    background: -webkit-linear-gradient(to right, #000099, #00004a);
-    background: linear-gradient(to left, #000099, #00004a);
-    margin: 26px auto;
-}
-
-
-/* Login */
-/* Para o bottom ficar preenchido ao centro */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input[type="submit"] {
-    margin-top: 2rem;
-    padding: 0.4rem;
-    width: 100%;
-    background: linear-gradient(to left, #000099, #8e54e9);
-    cursor: pointer;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    letter-spacing: 0.5px;
-    background: -webkit-linear-gradient(to right, #000099, #8e54e9);
-}
-
-/* Redes Sociais - Login */
-.footers {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-}
-
-.footers span {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-.footers .social-field {
-    padding: 0.4rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    width: auto;
-    cursor: pointer;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.footers .social-field a i {
-    margin: 0 0.5rem;
-    width: 15px;
-}
-
-.footers .social-field a {
-    text-decoration: none;
-    color: white;
-}
-
-.footers .social-field.gmail {
-    background: -webkit-linear-gradient(to right, #8e36e0, #164b92);
-    background: linear-gradient(to left, #8e36e0, #164b92);
-}
-
-.footers .social-field.linkedin {
-    background: -webkit-linear-gradient(to right, #0077b5, #111111);
-    background: linear-gradient(to left, #0077b5, #111111);
-}
-
-.footers .social-field.facebook {
-    background: -webkit-linear-gradient(to right, #1e3c72, #2a5298);
-    background: linear-gradient(to left, #1e3c72, #2a5298);
-}
-
-
-/* Registo */
-/* Elementos de classe "género" */
-.género {
-    margin-bottom: 1em;
 }
 
 
@@ -651,6 +562,14 @@ blockquote::after {
 
 
 /* Contact Us */
+.borders {
+    width: 160px;
+    height: 5px;
+    background: -webkit-linear-gradient(to right, #000099, #00004a);
+    background: linear-gradient(to left, #000099, #00004a);
+    margin: 26px auto;
+}
+
 .contact-form {
     max-width: 500px;
     margin: auto;
@@ -761,4 +680,85 @@ blockquote::after {
     line-height: 10px;
     bottom: -15px;
     left: 5px;
+}
+
+
+/* Login */
+/* Para o bottom ficar preenchido ao centro */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #000099, #8e54e9);
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    letter-spacing: 0.5px;
+    background: -webkit-linear-gradient(to right, #000099, #8e54e9);
+}
+
+/* Redes Sociais - Login */
+.footers {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.footers span {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.footers .social-field {
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    width: auto;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.footers .social-field a i {
+    margin: 0 0.5rem;
+    width: 15px;
+}
+
+.footers .social-field a {
+    text-decoration: none;
+    color: white;
+}
+
+.footers .social-field.gmail {
+    background: -webkit-linear-gradient(to right, #8e36e0, #164b92);
+    background: linear-gradient(to left, #8e36e0, #164b92);
+}
+
+.footers .social-field.linkedin {
+    background: -webkit-linear-gradient(to right, #0077b5, #111111);
+    background: linear-gradient(to left, #0077b5, #111111);
+}
+
+.footers .social-field.facebook {
+    background: -webkit-linear-gradient(to right, #1e3c72, #2a5298);
+    background: linear-gradient(to left, #1e3c72, #2a5298);
+}
+
+
+/* Registo */
+/* Elementos de classe "género" */
+.género {
+    margin-bottom: 1em;
 }
